@@ -44,7 +44,7 @@ def predict():
     sl=sepalLength,sw=sepalWidth,pl=petalLength,pw=petalWidth,rows=objarr,arr=[2,4,6,8])
 
 @app.route("/signup",methods=['POST']) #is reslove after i use str html
-def formsubmit():
+def signup():
     print("formsubmit route")
     try:
         #extract the incoming request data from user
@@ -85,7 +85,7 @@ def delete(id):
 
 
 @app.route('/login',methods=['POST'])   # We have insert the data in 
-def insertUser():
+def login():
     try:
         username=request.form['username']
         pwd=request.form['pwd']
