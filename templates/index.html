@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML Deployment</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/static2.css') }}">
+  
+</head>
+<body>
+ <div class="login">  
+	<h1>Predict Iris Class</h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	 
+    	<input type="text" name="SepalLength" placeholder="Sepal Length (cm)" required="required" />
+        <input type="text" name="SepalWidth" placeholder="Sepal Width (cm)" required="required" />
+		<input type="text" name="PetalLength" placeholder="Petal Length (cm)" required="required" />
+		<input type="text" name="PetalWidth" placeholder="Petal Width (cm)" required="required" />
+
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }} 
+   <br>
+   {% for row in rows %}
+   <tr>
+      <td>{{row.number}}</td>
+      <td>{{row.index}}</td>
+</td>
+</form> </td>
+   </tr>
+{% endfor %}
+</table>
+
+
+<button id ="w3-btn">delete</button>
+
+   <a href="/delete/72"><button type="submit" class="btn btn-primary btn-block btn-large">Delete</button>
+ </div>
+</body>
+</html>

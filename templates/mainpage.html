@@ -1,0 +1,25 @@
+<html>
+<body>
+
+<h1>My Home page</h1>
+
+<p> Welcome  {{email}} </p>
+<p>Message is {{message}}</p>
+
+
+<!-- display a array of dictionary just take note u need to |upperot text -->
+<table border = 1>
+{% for item in arrofobj %}
+<tr>
+    <td>{{item.index}}</td>
+    <td>{{item.number|upper}}</td>
+</tr>
+{% endfor %}
+
+</table>
+
+
+
+</body>
+
+</html>
